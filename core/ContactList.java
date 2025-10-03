@@ -1,14 +1,14 @@
-package Core;
+package core;
 
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.StringJoiner;
 
-public class List {
-    private ArrayList<Contact> myList = new ArrayList<Contact>();
+public class ContactList {
+    private ArrayList<Contact> myList;
 
-    public List(ArrayList<Contact> myList) {
-        this.myList = myList;
+    public ContactList() {
+        this.myList = new ArrayList<>();
     }
 
     public String addContact(String name, String lastName, String phone, String email) {
