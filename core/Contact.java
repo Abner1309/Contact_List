@@ -49,7 +49,7 @@ public class Contact {
 
     @Override
     public String toString() {
-        StringJoiner sj = new StringJoiner("|");
+        StringJoiner sj = new StringJoiner(" | ");
         sj.add("Name: " + getName());
         sj.add("Last Name: " + getLastName());
         sj.add("Phone: " + getPhone());

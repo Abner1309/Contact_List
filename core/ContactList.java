@@ -14,7 +14,6 @@ public class ContactList {
     public String addContact(String name, String lastName, String phone, String email) {
         Contact cont = new Contact(name, lastName, phone, email);
         myList.add(cont);
-        myList.sort(Comparator.comparing(Contact::getName));
         return "Contact Added";
     }
 
@@ -32,6 +31,7 @@ public class ContactList {
     }
 
     public String showContacts() {
+        myList.sort(Comparator.comparing(Contact::getName));
         StringJoiner sj = new StringJoiner("\n");
         for (int i = 0; i < myList.size(); i++) {
             sj.add(myList.get(i).toString());
