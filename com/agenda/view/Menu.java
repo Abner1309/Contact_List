@@ -1,8 +1,9 @@
-package core;
+package com.agenda.view;
 
+import com.agenda.controller.*;
 import java.util.Scanner;
 
-public class Main {
+public class Menu {
     private static void showMenu() {
         System.out.println("\n>>>CONTACT LIST<<<");
         System.out.println("Select An Option:");

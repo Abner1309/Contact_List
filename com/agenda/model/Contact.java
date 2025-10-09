@@ -1,4 +1,4 @@
-package core;
+package com.agenda.model;
 
 import java.util.StringJoiner;
 

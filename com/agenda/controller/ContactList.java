@@ -1,5 +1,6 @@
-package core;
+package com.agenda.controller;
 
+import com.agenda.model.*;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.StringJoiner;
