@@ -11,17 +11,16 @@ public class ContactList {
         this.myList = new ArrayList<>();
     }
 
-    public String addContact(String name, String lastName, String phone, String email) {
-        Contact cont = new Contact(name, lastName, phone, email);
+    public String addContact(String name, String phone, String email) {
+        Contact cont = new Contact(name, phone, email);
         myList.add(cont);
         return "Contact Added";
     }
 
-    public String removeContact(String name, String lastName) {
+    public String removeContact(String name) {
         String answer = "Contact Not Found";
         for (int i = 0; i < myList.size(); i++) {
-            if (myList.get(i).getName().equals(name) &&
-            myList.get(i).getLastName().equals(lastName)) {
+            if (myList.get(i).getName().equals(name)) {
                 myList.remove(i);
                 answer = "Contact Removed";
                 break;
@@ -39,11 +38,10 @@ public class ContactList {
         return sj.toString();
     }
 
-    public String showSpecificContact(String name, String lastName) {
+    public String showSpecificContact(String name) {
         String answer = "Contact Not Found";
         for (int i = 0; i < myList.size(); i++) {
-            if (myList.get(i).getName().equals(name) &&
-            myList.get(i).getLastName().equals(lastName)) {
+            if (myList.get(i).getName().equals(name)) {
                 return myList.get(i).toString();
             }
         }

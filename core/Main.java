@@ -19,7 +19,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in); 
         boolean condition = true;
         int choice;
-        String name, lastName, phone, email;
+        String name, phone, email;
 
         while (condition) {
             showMenu();
@@ -33,44 +33,37 @@ public class Main {
             }
 
             switch (choice) {
-                case 1:
+                case 1 -> {
                     System.out.print("Name: ");
                     name = scanner.nextLine(); 
-                    System.out.print("Last Name: ");
-                    lastName = scanner.nextLine();
                     System.out.print("Phone: ");
                     phone = scanner.nextLine();
                     System.out.print("E-mail: ");
                     email = scanner.nextLine();
-                    lt.addContact(name, lastName, phone, email); 
-                    break;
-                case 2:
+                    lt.addContact(name, phone, email);
+                }
+                case 2 -> {
                     System.out.print("Name: ");
                     name = scanner.nextLine();
-                    System.out.print("Last Name: ");
-                    lastName = scanner.nextLine();
-                    lt.removeContact(name, lastName);
-                    break;
-                case 3:
+                    lt.removeContact(name);
+                }
+                case 3 -> {
                     System.out.println("\n--- CONTACTS LIST ---");
                     System.out.println(lt.showContacts());
                     System.out.println("---------------------\n");
-                    break;
-                case 4:
+                }
+                case 4 -> {
                     System.out.print("Name: ");
                     name = scanner.nextLine();
-                    System.out.print("Last Name: ");
-                    lastName = scanner.nextLine();
                     System.out.println("\n--- SEARCH RESULT ---");
-                    System.out.println(lt.showSpecificContact(name, lastName));
+                    System.out.println(lt.showSpecificContact(name));
                     System.out.println("---------------------\n");
-                    break;
-                case 5:
+                }
+                case 5 -> {
                     condition = false;
                     System.out.println("Exiting application. Goodbye!");
-                    break;
-                default:
-                    System.out.println("Invalid Number. Please enter an option between 1 and 5.");
+                }
+                default -> System.out.println("Invalid Number. Please enter an option between 1 and 5.");
             }
         }
         scanner.close();
