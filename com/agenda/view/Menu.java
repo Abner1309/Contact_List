@@ -8,10 +8,13 @@ public class Menu {
         System.out.println("\n>>>CONTACT LIST<<<");
         System.out.println("Select An Option:");
         System.out.println("1. Add Contact.");
-        System.out.println("2. Remove Contact.");
-        System.out.println("3. List All Contacts.");
-        System.out.println("4. Search Contact.");
-        System.out.println("5. Exit.\n");
+        System.out.println("2. Edit Name.");
+        System.out.println("3. Edit Phone.");
+        System.out.println("4. Edit E-mail.");
+        System.out.println("5. Remove Contact.");
+        System.out.println("6. List All Contacts.");
+        System.out.println("7. Search Contact.");
+        System.out.println("8. Exit.\n");
         System.out.print("Option: ");
     }
 
@@ -20,7 +23,7 @@ public class Menu {
         Scanner scanner = new Scanner(System.in); 
         boolean condition = true;
         int choice;
-        String name, phone, email;
+        String name, newName, phone, newPhone, email, newEmail;
 
         while (condition) {
             showMenu();
@@ -46,21 +49,42 @@ public class Menu {
                 case 2 -> {
                     System.out.print("Name: ");
                     name = scanner.nextLine();
-                    lt.removeContact(name);
+                    System.out.print("New Name: ");
+                    newName = scanner.nextLine();
+                    lt.editName(name, newName);
                 }
                 case 3 -> {
+                    System.out.print("Name: ");
+                    name = scanner.nextLine();
+                    System.out.print("New Phone: ");
+                    newPhone = scanner.nextLine();
+                    lt.editPhone(name, newPhone);
+                }
+                case 4 -> {
+                    System.out.print("Name: ");
+                    name = scanner.nextLine();
+                    System.out.print("New E-mail: ");
+                    newEmail = scanner.nextLine();
+                    lt.editEmail(name, newEmail);
+                }
+                case 5 -> {
+                    System.out.print("Name: ");
+                    name = scanner.nextLine();
+                    lt.removeContact(name);
+                }
+                case 6 -> {
                     System.out.println("\n--- CONTACTS LIST ---");
                     System.out.println(lt.showContacts());
                     System.out.println("---------------------\n");
                 }
-                case 4 -> {
+                case 7 -> {
                     System.out.print("Name: ");
                     name = scanner.nextLine();
                     System.out.println("\n--- SEARCH RESULT ---");
                     System.out.println(lt.showSpecificContact(name));
                     System.out.println("---------------------\n");
                 }
-                case 5 -> {
+                case 8 -> {
                     condition = false;
                     System.out.println("Exiting application. Goodbye!");
                 }

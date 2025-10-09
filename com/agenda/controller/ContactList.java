@@ -18,6 +18,31 @@ public class ContactList {
         return "Contact Added";
     }
 
+    public void editName(String name, String newName) {
+        for (int i = 0; i < myList.size(); i++) {
+            if (myList.get(i).getName().equals(name)) {
+                myList.get(i).setName(newName);
+            }
+        }
+    }
+
+    public void editPhone(String name, String newPhone) {
+        for (int i = 0; i < myList.size(); i++) {
+            if (myList.get(i).getName().equals(name)) {
+                myList.get(i).setPhone(newPhone);
+            }
+        }
+    }
+
+    public void editEmail(String name, String newEmail) {
+        for (int i = 0; i < myList.size(); i++) {
+            if (myList.get(i).getName().equals(name)) {
+                myList.get(i).setEmail(newEmail);
+            }
+        }
+    }
+
+
     public String removeContact(String name) {
         String answer = "Contact Not Found";
         for (int i = 0; i < myList.size(); i++) {
