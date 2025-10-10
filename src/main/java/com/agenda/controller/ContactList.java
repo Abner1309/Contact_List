@@ -6,7 +6,7 @@ import java.util.Comparator;
 import java.util.StringJoiner;
 
 public class ContactList {
-    private ArrayList<Contact> myList;
+    private final ArrayList<Contact> myList;
 
     public ContactList() {
         this.myList = new ArrayList<>();
@@ -41,7 +41,6 @@ public class ContactList {
             }
         }
     }
-
 
     public String removeContact(String name) {
         String answer = "Contact Not Found";
