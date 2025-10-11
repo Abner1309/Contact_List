@@ -3,14 +3,23 @@ package com.agenda.model;
 import java.util.StringJoiner;
 
 public class Contact {
+    private static int nextId = 0;
+
+    private final int id;
     private String name;
     private String phone;
     private String email;    
 
     public Contact(String name, String phone, String email) {
+        this.id = nextId;
         this.name = name;
         this.phone = phone;
         this.email = email;
+        nextId++;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getName() {
@@ -40,6 +49,7 @@ public class Contact {
     @Override
     public String toString() {
         StringJoiner sj = new StringJoiner(" | ");
+        sj.add("ID: " + getId());
         sj.add("Name: " + getName());
         sj.add("Phone: " + getPhone());
         sj.add("E-mail: " + getEmail());

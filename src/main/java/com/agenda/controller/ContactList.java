@@ -18,58 +18,43 @@ public class ContactList {
         return "Contact Added";
     }
 
-    public void editName(String name, String newName) {
-        for (int i = 0; i < myList.size(); i++) {
-            if (myList.get(i).getName().equals(name)) {
-                myList.get(i).setName(newName);
+    public String updateContact(int number, String newName, String newPhone, String newEmail) {
+        for (Contact contact : myList) {
+            if (contact.getId() == number) {
+                contact.setName(newName);
+                contact.setPhone(newPhone);
+                contact.setEmail(newEmail);
+                return "Updated Contact";
             }
         }
+        return "Contact Not Found";
     }
 
-    public void editPhone(String name, String newPhone) {
+    public String removeContact(int number) {
         for (int i = 0; i < myList.size(); i++) {
-            if (myList.get(i).getName().equals(name)) {
-                myList.get(i).setPhone(newPhone);
-            }
-        }
-    }
-
-    public void editEmail(String name, String newEmail) {
-        for (int i = 0; i < myList.size(); i++) {
-            if (myList.get(i).getName().equals(name)) {
-                myList.get(i).setEmail(newEmail);
-            }
-        }
-    }
-
-    public String removeContact(String name) {
-        String answer = "Contact Not Found";
-        for (int i = 0; i < myList.size(); i++) {
-            if (myList.get(i).getName().equals(name)) {
+            if (myList.get(i).getId() == number) {
                 myList.remove(i);
-                answer = "Contact Removed";
-                break;
+                return "Contact Removed";
             }
         }
-        return answer;
+        return "Contact Not Found";
     }
 
     public String showContacts() {
         myList.sort(Comparator.comparing(Contact::getName));
         StringJoiner sj = new StringJoiner("\n");
-        for (int i = 0; i < myList.size(); i++) {
-            sj.add(myList.get(i).toString());
+        for (Contact contact : myList) {
+            sj.add(contact.toString());
         }
         return sj.toString();
     }
 
-    public String showSpecificContact(String name) {
-        String answer = "Contact Not Found";
-        for (int i = 0; i < myList.size(); i++) {
-            if (myList.get(i).getName().equals(name)) {
-                return myList.get(i).toString();
+    public String showSpecificContact(int number) {
+        for (Contact contact : myList) {
+            if (contact.getId() == number) {
+                return contact.toString();
             }
         }
-        return answer;
+        return "Contact Not Found";
     }
 }
