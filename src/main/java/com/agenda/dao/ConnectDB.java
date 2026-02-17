@@ -1,4 +1,4 @@
-package com.agenda.controller;
+package com.agenda.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

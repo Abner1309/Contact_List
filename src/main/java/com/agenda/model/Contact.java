@@ -18,6 +18,13 @@ public class Contact {
         nextId++;
     }
 
+    public Contact(int id, String name, String phone, String email) {
+        this.id = id;
+        this.name = name;
+        this.phone = phone;
+        this.email = email;
+    }
+
     public int getId() {
         return id;
     }
@@ -49,10 +56,9 @@ public class Contact {
     @Override
     public String toString() {
         StringJoiner sj = new StringJoiner(" | ");
-        sj.add("ID: " + getId());
-        sj.add("Name: " + getName());
-        sj.add("Phone: " + getPhone());
-        sj.add("E-mail: " + getEmail());
+        sj.add(getName());
+        sj.add(getPhone());
+        sj.add(getEmail());
         return sj.toString();
     }
 }

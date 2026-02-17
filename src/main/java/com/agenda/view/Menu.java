@@ -1,6 +1,7 @@
 package com.agenda.view;
 
-import com.agenda.controller.*;
+import com.agenda.model.ContactList;
+
 import java.util.Scanner;
 
 public class Menu {

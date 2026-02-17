@@ -1,7 +1,10 @@
-package com.agenda.controller;
+package com.agenda.dao;
+
+import com.agenda.model.Contact;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ContactDAO {
     public void insertContact(String name, String phone, String email) throws RuntimeException {
@@ -17,25 +20,29 @@ public class ContactDAO {
         }
     }
 
-    public String listAllContacts() throws RuntimeException {
-        ArrayList<String> cont = new ArrayList<>();
-        String sql = "SELECT * FROM contacts";
+    public List<Contact> listAllContacts() throws RuntimeException {
+        List<Contact> cont = new ArrayList<Contact>();
+        String sql = "SELECT * FROM contacts ORDER BY name ASC";
 
         try (Connection conn = ConnectDB.connect();
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
+
             while (rs.next()) {
-                String c = rs.getInt("id") + " | " +
-                        rs.getString("name") + " | " +
-                        rs.getString("phone") + " | " +
-                        rs.getString("email");
-                cont.add(c);
+                int id = rs.getInt("id");
+                String name = rs.getString("name");
+                String phone = rs.getString("phone");
+                String email = rs.getString("email");
+
+                Contact contact = new Contact(id, name, phone, email);
+
+                cont.add(contact);
             }
         }
         catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException(e.getMessage());
         }
-        return cont.toString();
+        return cont;
     }
 
     public void updateContact(int id, String name, String phone, String email) throws RuntimeException {
