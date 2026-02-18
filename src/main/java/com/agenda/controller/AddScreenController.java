@@ -35,6 +35,7 @@ public class AddScreenController implements Initializable {
         return alert.showAndWait().orElse(ButtonType.CANCEL) == ButtonType.OK;
     }
 
+    @FXML
     public void onClickCancel(ActionEvent event) {
         if (confirmExit()) {
             Stage stage = (Stage) btnCancel.getScene().getWindow();
