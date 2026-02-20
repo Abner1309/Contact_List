@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="310.0" prefWidth="370.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.agenda.controller.settings.InterfaceScreenController">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="47.0" layoutY="145.0" text="Interface Theme:" textAlignment="CENTER">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="cbTheme" layoutX="185.0" layoutY="142.0" prefWidth="150.0" />
+   </children>
+</AnchorPane>

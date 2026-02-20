@@ -38,10 +38,11 @@ public class MainScreenController implements Initializable {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/agenda/fxml/add-screen.fxml"));
             Parent root = loader.load();
-            Scene novaCena = new Scene(root);
+
+            Scene scene = new Scene(root);
             Stage stageAdd = new Stage();
             stageAdd.setTitle("Add Contact");
-            stageAdd.setScene(novaCena);
+            stageAdd.setScene(scene);
             stageAdd.setResizable(false);
             stageAdd.showAndWait();
             loadContacts();
@@ -66,6 +67,24 @@ public class MainScreenController implements Initializable {
             stage.setResizable(false);
             stage.showAndWait();
             loadContacts();
+        }
+        catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @FXML
+    public void onClickSettings(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/agenda/fxml/settings-screen.fxml"));
+            Parent root = loader.load();
+
+            Scene novaCena = new Scene(root);
+            Stage stageAdd = new Stage();
+            stageAdd.setTitle("Settings");
+            stageAdd.setScene(novaCena);
+            stageAdd.setResizable(false);
+            stageAdd.showAndWait();
         }
         catch (IOException e) {
             throw new RuntimeException(e);
