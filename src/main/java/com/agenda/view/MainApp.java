@@ -33,6 +33,8 @@ public class MainApp extends Application {
             Parent root = loader.load();
 
             Scene scene = new Scene(root);
+            ThemeManager.applyTheme(scene);
+            ThemeManager.addSceneToManager(scene);
             stage.setTitle("Contact List");
             stage.setScene(scene);
             stage.setResizable(false);

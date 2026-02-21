@@ -1,17 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="310.0" prefWidth="370.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.agenda.controller.settings.InterfaceScreenController">
    <children>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="47.0" layoutY="145.0" text="Interface Theme:" textAlignment="CENTER">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="90.0" layoutY="14.0" text="Choose Your Theme" textAlignment="CENTER">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <ToggleButton fx:id="tbLight" layoutX="158.0" layoutY="84.0" mnemonicParsing="false" onAction="#onClickBtnLight" text="Light">
          <font>
             <Font size="15.0" />
          </font>
-      </Label>
-      <ChoiceBox fx:id="cbTheme" layoutX="185.0" layoutY="142.0" prefWidth="150.0" />
+      </ToggleButton>
+      <ToggleButton fx:id="tbDark" layoutX="158.0" layoutY="154.0" mnemonicParsing="false" onAction="#onClickBtnDark" text="Dark">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </ToggleButton>
    </children>
 </AnchorPane>

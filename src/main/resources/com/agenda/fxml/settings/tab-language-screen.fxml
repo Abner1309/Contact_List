@@ -5,7 +5,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="310.0" prefWidth="370.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.agenda.controller.settings.LanguageScreenController">
    <children>
       <Label alignment="CENTER" contentDisplay="CENTER" layoutX="76.0" layoutY="14.0" text="Choose Your Language" textAlignment="CENTER">
@@ -13,12 +12,12 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <ToggleButton layoutX="97.0" layoutY="84.0" mnemonicParsing="false" text="English (United States)" textAlignment="CENTER">
+      <ToggleButton fx:id="btnEnglish" layoutX="97.0" layoutY="84.0" mnemonicParsing="false" text="English (United States)" textAlignment="CENTER">
          <font>
             <Font size="15.0" />
          </font>
       </ToggleButton>
-      <ToggleButton contentDisplay="CENTER" layoutX="113.0" layoutY="154.0" mnemonicParsing="false" text="Português (Brasil)" textAlignment="CENTER">
+      <ToggleButton fx:id="btnPortuguese" contentDisplay="CENTER" layoutX="113.0" layoutY="154.0" mnemonicParsing="false" text="Português (Brasil)" textAlignment="CENTER">
          <font>
             <Font size="15.0" />
          </font>

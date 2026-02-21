@@ -2,6 +2,7 @@ package com.agenda.controller;
 
 import com.agenda.dao.ContactDAO;
 import com.agenda.model.Contact;
+import com.agenda.view.ThemeManager;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -40,6 +41,8 @@ public class MainScreenController implements Initializable {
             Parent root = loader.load();
 
             Scene scene = new Scene(root);
+            ThemeManager.applyTheme(scene);
+            ThemeManager.addSceneToManager(scene);
             Stage stageAdd = new Stage();
             stageAdd.setTitle("Add Contact");
             stageAdd.setScene(scene);
@@ -62,7 +65,10 @@ public class MainScreenController implements Initializable {
             controller.setContact(contact);
 
             Stage stage = new Stage();
-            stage.setScene(new Scene (root));
+            Scene scene = new Scene(root);
+            ThemeManager.applyTheme(scene);
+            ThemeManager.addSceneToManager(scene);
+            stage.setScene(scene);
             stage.setTitle("Contact Details");
             stage.setResizable(false);
             stage.showAndWait();
@@ -79,10 +85,12 @@ public class MainScreenController implements Initializable {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/agenda/fxml/settings-screen.fxml"));
             Parent root = loader.load();
 
-            Scene novaCena = new Scene(root);
+            Scene scene = new Scene(root);
+            ThemeManager.applyTheme(scene);
+            ThemeManager.addSceneToManager(scene);
             Stage stageAdd = new Stage();
             stageAdd.setTitle("Settings");
-            stageAdd.setScene(novaCena);
+            stageAdd.setScene(scene);
             stageAdd.setResizable(false);
             stageAdd.showAndWait();
         }
