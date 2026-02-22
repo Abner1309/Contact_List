@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="310.0" prefWidth="370.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.agenda.controller.settings.AboutScreenController">
+<AnchorPane prefHeight="312.0" prefWidth="370.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.agenda.controller.settings.AboutScreenController">
    <children>
       <Label alignment="CENTER" contentDisplay="CENTER" layoutX="34.0" layoutY="79.0" text="Software created by Abner1309." textAlignment="CENTER">
          <font>

@@ -1,14 +1,12 @@
 package com.agenda.controller;
 
 import com.agenda.dao.ContactDAO;
+import com.agenda.view.ThemeManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -31,6 +29,9 @@ public class AddScreenController implements Initializable {
         alert.setTitle("Confirmation");
         alert.setHeaderText("Do you really want to leave?");
         alert.setContentText("The changes will be lost.");
+        DialogPane dialogPane = alert.getDialogPane();
+        dialogPane.getStylesheets().clear();
+        dialogPane.getStylesheets().add(getClass().getResource(ThemeManager.getThemePath()).toExternalForm());
 
         return alert.showAndWait().orElse(ButtonType.CANCEL) == ButtonType.OK;
     }
@@ -53,6 +54,9 @@ public class AddScreenController implements Initializable {
             Alert alertError = new Alert(Alert.AlertType.ERROR);
             alertError.setHeaderText("Mandatory Fields!");
             alertError.setContentText("Please, fill the Name and Phone.");
+            DialogPane dialogPane = alertError.getDialogPane();
+            dialogPane.getStylesheets().clear();
+            dialogPane.getStylesheets().add(getClass().getResource(ThemeManager.getThemePath()).toExternalForm());
             alertError.showAndWait();
             return;
         }
@@ -63,6 +67,9 @@ public class AddScreenController implements Initializable {
         alertInformation.setTitle("Success!");
         alertInformation.setHeaderText(null);
         alertInformation.setContentText("Contact saved successfully.");
+        DialogPane dialogPane = alertInformation.getDialogPane();
+        dialogPane.getStylesheets().clear();
+        dialogPane.getStylesheets().add(getClass().getResource(ThemeManager.getThemePath()).toExternalForm());
         alertInformation.showAndWait();
 
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

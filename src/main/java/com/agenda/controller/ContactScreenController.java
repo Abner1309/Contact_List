@@ -2,16 +2,18 @@ package com.agenda.controller;
 
 import com.agenda.dao.ContactDAO;
 import com.agenda.model.Contact;
+import com.agenda.view.ThemeManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
-public class ContactScreenController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class ContactScreenController implements Initializable {
     private int idContact;
     @FXML
     private TextField tfName;
@@ -56,6 +58,9 @@ public class ContactScreenController {
         alertInformation.setTitle("Success!");
         alertInformation.setHeaderText(null);
         alertInformation.setContentText("The contact information has been updated.");
+        DialogPane dialogPane = alertInformation.getDialogPane();
+        dialogPane.getStylesheets().clear();
+        dialogPane.getStylesheets().add(getClass().getResource(ThemeManager.getThemePath()).toExternalForm());
         alertInformation.showAndWait();
 
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -75,6 +80,9 @@ public class ContactScreenController {
         alertInformation.setTitle("Success!");
         alertInformation.setHeaderText(null);
         alertInformation.setContentText("The contact has been deleted.");
+        DialogPane dialogPane = alertInformation.getDialogPane();
+        dialogPane.getStylesheets().clear();
+        dialogPane.getStylesheets().add(getClass().getResource(ThemeManager.getThemePath()).toExternalForm());
         alertInformation.showAndWait();
 
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -94,6 +102,9 @@ public class ContactScreenController {
         alert.setTitle("Confirmation");
         alert.setHeaderText("Do you really want to leave?");
         alert.setContentText("The changes will be lost.");
+        DialogPane dialogPane = alert.getDialogPane();
+        dialogPane.getStylesheets().clear();
+        dialogPane.getStylesheets().add(getClass().getResource(ThemeManager.getThemePath()).toExternalForm());
 
         return alert.showAndWait().orElse(ButtonType.CANCEL) == ButtonType.OK;
     }
@@ -103,7 +114,23 @@ public class ContactScreenController {
         alert.setTitle("Confirmation");
         alert.setHeaderText("Do you really want to delete the contact?");
         alert.setContentText("The contact will be permanently deleted.");
+        DialogPane dialogPane = alert.getDialogPane();
+        dialogPane.getStylesheets().clear();
+        dialogPane.getStylesheets().add(getClass().getResource(ThemeManager.getThemePath()).toExternalForm());
 
         return alert.showAndWait().orElse(ButtonType.CANCEL) == ButtonType.OK;
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        javafx.application.Platform.runLater(() -> {
+            Stage stage = (Stage) btnBack.getScene().getWindow();
+
+            stage.setOnCloseRequest(event -> {
+                if (!confirmExit()) {
+                    event.consume();
+                }
+            });
+        });
     }
 }
