@@ -1,28 +1,30 @@
 package com.agenda.view;
 
 import javafx.scene.Scene;
-
 import java.util.ArrayList;
 import java.util.List;
+import java.util.prefs.Preferences;
 
 public class ThemeManager {
-    private static String theme = "Light";
+    private static final Preferences prefs = Preferences.userNodeForPackage(ThemeManager.class);
+    private static final String THEME_KEY = "user_theme";
     private static List<Scene> sceneManager = new ArrayList<Scene>();
 
-    public static void setTheme(String newTheme) {
-        theme = newTheme;
+    public static String getSavedTheme() {
+        return prefs.get(THEME_KEY, "Light");
+    }
+
+    public static void saveTheme(String theme) {
+        prefs.put(THEME_KEY, theme);
     }
 
     public static String getThemePath() {
+        String theme = getSavedTheme();
         return theme.equals("Dark") ? "/com/agenda/css/dark-theme.css" : "/com/agenda/css/light-theme.css";
     }
 
     public static void addSceneToManager(Scene scene) {
         sceneManager.add(scene);
-    }
-
-    public static void removeSceneToManager(Scene scene) {
-        sceneManager.remove(scene);
     }
 
     public static void applyThemeInAllScenes() {

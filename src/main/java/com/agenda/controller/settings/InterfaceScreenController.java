@@ -19,7 +19,7 @@ public class InterfaceScreenController implements Initializable {
     public void onClickBtnLight() {
         tbLight.setSelected(true);
         tbDark.setSelected(false);
-        ThemeManager.setTheme("Light");
+        ThemeManager.saveTheme("Light");
         ThemeManager.applyThemeInAllScenes();
     }
 
@@ -27,7 +27,7 @@ public class InterfaceScreenController implements Initializable {
     public void onClickBtnDark() {
         tbLight.setSelected(false);
         tbDark.setSelected(true);
-        ThemeManager.setTheme("Dark");
+        ThemeManager.saveTheme("Dark");
         ThemeManager.applyThemeInAllScenes();
     }
 
