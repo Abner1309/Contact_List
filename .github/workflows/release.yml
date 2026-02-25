@@ -35,12 +35,12 @@ jobs:
       - name: Create Installer with jpackage (Linux)
         if: matrix.os == 'ubuntu-latest'
         run: |
-          jpackage --type deb --dest dist --name "contactlist" --input target --main-jar ContactList-1.0.0.jar --main-class com.agenda.view.MainApp
+          jpackage --type deb --dest dist --name "ContactList" --input target --main-jar ContactList-1.0.0.jar --main-class com.agenda.view.MainApp
 
       - name: Create Installer with jpackage (macOS)
         if: matrix.os == 'macos-latest'
         run: |
-          jpackage --type dmg --dest dist --name "ContactList" --input target --main-jar ContactList-1.0.0.jar --com.agenda.view.MainApp
+          jpackage --type dmg --dest dist --name "ContactList" --input target --main-jar ContactList-1.0.0.jar --main-class com.agenda.view.MainApp
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
