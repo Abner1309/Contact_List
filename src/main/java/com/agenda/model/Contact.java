@@ -55,10 +55,10 @@ public class Contact {
 
     @Override
     public String toString() {
-        StringJoiner sj = new StringJoiner(" | ");
-        sj.add(getName());
-        sj.add(getPhone());
-        sj.add(getEmail());
+        StringJoiner sj = new StringJoiner("");
+        sj.add(" ☺\uFE0E " + getName());
+        sj.add(" ☏ " + getPhone());
+        sj.add(" ✉ " + getEmail());
         return sj.toString();
     }
 }

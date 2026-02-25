@@ -51,6 +51,21 @@ public class ContactScreenController implements Initializable {
 
     @FXML
     public void onClickBtnSave(ActionEvent event) {
+        String strName = tfName.getText();
+        String strPhone = tfEmail.getText();
+        String strEmail = tfEmail.getText();
+
+        if (strName.length() > 100 || strPhone.length() > 50 || strEmail.length() > 100) {
+            Alert alertError = new Alert(Alert.AlertType.ERROR);
+            alertError.setHeaderText("Character Limit Exceeded.!");
+            alertError.setContentText("The name and email address must have a maximum of 100 characters, and the phone number, 50 characters.");
+            DialogPane dialogPane = alertError.getDialogPane();
+            dialogPane.getStylesheets().clear();
+            dialogPane.getStylesheets().add(getClass().getResource(ThemeManager.getThemePath()).toExternalForm());
+            alertError.showAndWait();
+            return;
+        }
+
         ContactDAO bdContact = new ContactDAO();
         bdContact.updateContact(idContact, tfName.getText(), tfPhone.getText(), tfEmail.getText());
 

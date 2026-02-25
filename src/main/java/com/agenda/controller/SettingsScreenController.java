@@ -20,8 +20,6 @@ public class SettingsScreenController implements Initializable {
     @FXML
     private Button btnInterface;
     @FXML
-    private Button btnLanguage;
-    @FXML
     private Button btnAbout;
     @FXML
     private Button btnBack;
@@ -54,11 +52,6 @@ public class SettingsScreenController implements Initializable {
     @FXML
     public void onClickInterface() {
         loadView("/com/agenda/fxml/settings/tab-interface-screen.fxml");
-    }
-
-    @FXML
-    public void onClickLanguages() {
-        loadView("/com/agenda/fxml/settings/tab-language-screen.fxml");
     }
 
     @Override

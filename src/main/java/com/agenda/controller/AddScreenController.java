@@ -50,10 +50,21 @@ public class AddScreenController implements Initializable {
         String strPhone = tfPhone.getText();
         String strEmail = tfEmail.getText();
 
-        if (tfName.getText().isEmpty() || tfPhone.getText().isEmpty()) {
+        if (strName.isEmpty() || strPhone.isEmpty()) {
             Alert alertError = new Alert(Alert.AlertType.ERROR);
             alertError.setHeaderText("Mandatory Fields!");
             alertError.setContentText("Please, fill the Name and Phone.");
+            DialogPane dialogPane = alertError.getDialogPane();
+            dialogPane.getStylesheets().clear();
+            dialogPane.getStylesheets().add(getClass().getResource(ThemeManager.getThemePath()).toExternalForm());
+            alertError.showAndWait();
+            return;
+        }
+
+        if (strName.length() > 100 || strPhone.length() > 50 || strEmail.length() > 100) {
+            Alert alertError = new Alert(Alert.AlertType.ERROR);
+            alertError.setHeaderText("Character Limit Exceeded.!");
+            alertError.setContentText("The name and email address must have a maximum of 100 characters, and the phone number, 50 characters.");
             DialogPane dialogPane = alertError.getDialogPane();
             dialogPane.getStylesheets().clear();
             dialogPane.getStylesheets().add(getClass().getResource(ThemeManager.getThemePath()).toExternalForm());

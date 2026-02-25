@@ -25,11 +25,6 @@
                   <Font size="15.0" />
                </font>
             </Button>
-            <Button fx:id="btnLanguage" mnemonicParsing="false" onAction="#onClickLanguages" prefHeight="31.0" prefWidth="163.0" text="Language">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </Button>
          </children>
       </VBox>
       <AnchorPane fx:id="contentArea" layoutX="216.0" layoutY="74.0" prefHeight="312.0" prefWidth="370.0" />
