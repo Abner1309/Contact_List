@@ -6,6 +6,7 @@ module com.agenda {
     requires java.sql;
     requires java.prefs;
     requires org.xerial.sqlitejdbc;
+    requires org.slf4j;
 
     opens com.agenda.controller to javafx.fxml;
     opens com.agenda.model to javafx.base;
