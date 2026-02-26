@@ -5,7 +5,10 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class ConnectDB {
-    private static final String URL = "jdbc:sqlite:contacts.db";
+    private static String userHome = System.getProperty("user.home");
+    private static String dbPath = userHome + "/contacts.db";
+    private static String urlFinal = "jdbc:sqlite:" + dbPath;
+    private static final String URL = urlFinal;
 
     public static Connection connect() throws RuntimeException {
         try {
