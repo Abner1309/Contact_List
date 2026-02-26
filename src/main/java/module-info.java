@@ -9,8 +9,9 @@ module com.agenda {
     requires org.slf4j;
 
     opens com.agenda.controller to javafx.fxml;
-    opens com.agenda.model to javafx.base;
+    opens com.agenda.controller.settings to javafx.fxml;
     opens com.agenda.view to javafx.fxml;
+    opens com.agenda.model to javafx.base;
 
     exports com.agenda.view;
 }
