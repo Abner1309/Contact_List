@@ -13,5 +13,4 @@ module com.agenda {
     opens com.agenda.view to javafx.fxml;
 
     exports com.agenda.view;
-    exports com.agenda.controller;
 }
