@@ -1,6 +1,6 @@
 package com.agenda.controller.settings;
 
-import com.agenda.view.ThemeManager;
+import com.agenda.controller.ThemeManager;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ToggleButton;

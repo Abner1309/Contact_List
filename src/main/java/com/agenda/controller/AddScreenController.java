@@ -1,7 +1,6 @@
 package com.agenda.controller;
 
 import com.agenda.dao.ContactDAO;
-import com.agenda.view.ThemeManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;

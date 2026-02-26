@@ -1,4 +1,4 @@
-package com.agenda.view;
+package com.agenda.controller;
 
 import javafx.scene.Scene;
 import java.util.ArrayList;

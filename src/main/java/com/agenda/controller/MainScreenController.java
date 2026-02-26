@@ -2,7 +2,6 @@ package com.agenda.controller;
 
 import com.agenda.dao.ContactDAO;
 import com.agenda.model.Contact;
-import com.agenda.view.ThemeManager;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
