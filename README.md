@@ -21,10 +21,11 @@ This project consists of implementing a simple and intuitive desktop application
 5. SQLite (Local Database).
 
 ### 🛠 Instalation:
-1. Make sure you have Java 21 or higher installed on your computer.
-2. Download the (.jar) file available in the releases tab.
-3. Open the terminal and run the command: `java -jar [path]`.
-4. Enjoy.
+1. In the releases tab, there are files available for download.
+2. Choose the file according to your SO.
+3. Windows (exe/msi), Linux (deb) and Mac(dmg).
+4. Install the file.
+5. Enjoy.
 
 ### 📂 Folder Structure:
 The project was structured following design patterns to separate business logic from the visual interface:
