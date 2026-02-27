@@ -23,7 +23,7 @@ This project consists of implementing a simple and intuitive desktop application
 ### 🛠 Instalation:
 1. In the releases tab, there are files available for download.
 2. Choose the file according to your SO.
-3. Windows (exe/msi), Linux (deb) and Mac(dmg).
+3. Windows (.exe/.msi), Linux (.deb) and Mac (.dmg).
 4. Install the file.
 5. Enjoy.
 
